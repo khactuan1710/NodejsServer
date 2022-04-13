@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title><%=title%></title>
+    <%include item_include/header.ejs%>
+</head>
+<body class="container">
+<!--    nav-->
+<%include item_include/nav.ejs%>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading" style="padding-top: 40px">Asian</h1>
+        <p class="lead text-muted" >Photos off Asian</p>
+    </div>
+</section>
+<!-- Gallery -->
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <% for (var i = 0;i < data.length;i++){ %>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="<%=data[i].url%>" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text text-truncate"><%=data[i].title%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">Id ảnh: <%=data[i].id%></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery -->
+<%include item_include/footer.ejs%>
+
+
+</body>
+</html>
